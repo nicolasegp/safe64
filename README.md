@@ -18,7 +18,7 @@ Now edit the class constant `E64`
 ```php
 class Safe64 {
 
-	const B64 = '<DON'T TOUCH THIS>';
+	const B64 = '<DO NOT TOUCH THIS>';
 	const E64 = '<RESULT HERE>';
 	...
 ```
