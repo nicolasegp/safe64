@@ -1,46 +1,46 @@
-# Safe Base64 for PHP
+# Base64 Seguro para PHP
 
-Simple class to encrypt Base64 in PHP
+Class estática para encriptar cadenas de Base64 en PHP
 
-* [X] Unique token encryption support
-* [X] [URL Safe](https://en.wikipedia.org/wiki/Base64#URL_applications)
+* [X] Soporte para encriptación por token único
+* [X] [Aplicaciones en URL](https://es.wikipedia.org/wiki/Base64#Aplicaciones_en_URL)
 
-### How to configure
+### Configuración
 
-First need create a new token using the function `token()`
+Primero es necesario crear un Token único con la función `token()`
 
 ```php
 echo Safe64::token();
 ```
 
-Now edit the class constant `E64`
+Ahora editamos la constante `E64` con el resultado obtenido por `token()`
 
 ```php
 class Safe64 {
 
-	const B64 = '<🚫 DO NOT TOUCH THIS>';
-	const E64 = '<✅ RESULT HERE>';
+	const B64 = '<🚫 NO TOCAR ESTA CONSTANTE>';
+	const E64 = '<✅ RESULTADO AQUI>';
 	...
 ```
 
-### How to use
+### Como usarlo
 
 ```php
-$Str = Safe64::encode('Hello World!!');
-echo Safe64::decode($Str); // Hello World!!
+$str = Safe64::encode('Hello World!!');
+echo Safe64::decode($str); // Hello World!!
 ```
 
-### Custom Token "Express"
+### Token personalizado
 
 ```php
-// Generate with Safe64::token();
-$CustomToken = 'x9rRIj1EPoi5zJsg8hqDdGwcTCuFKS0a7YbnX6kLlUeV3WtBQHp4MmA2ZOyNfv';
+// Generar con Safe64::token();
+$customToken = 'x9rRIj1EPoi5zJsg8hqDdGwcTCuFKS0a7YbnX6kLlUeV3WtBQHp4MmA2ZOyNfv';
 
-$Str = Safe64::encode('Hello World!!', $CustomToken);
-echo Safe64::decode($Str); // Error
-echo Safe64::decode($Str, $CustomToken); // Hello World!!
+$str = Safe64::encode('Hello World!!', $customToken);
+echo Safe64::decode($str); // Error
+echo Safe64::decode($str, $customToken); // Hello World!!
 ```
 
-### License
+### Licencia
 
-> **GPL v3.0 ©** Feel free to use this code and adapt it to your software; just mention this page if you share your software (free or paid).
+> **GPL v3.0 ©** Siéntase libre de utilizar este código y adaptarlo a su software; sólo tiene que mencionar esta página si comparte su software (gratuito o de pago).
